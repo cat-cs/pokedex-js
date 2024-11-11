@@ -7,6 +7,5 @@ class Pokemon {
     photo;
     weight;
     height;
-    stats;
-
+    stats = [];
 }

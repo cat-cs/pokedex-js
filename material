@@ -1,7 +1,0 @@
-PokeAPI: https://pokeapi.co/api/v2/pokemon?offset=$%7Boffset%7D&limit=$%7Blimit%7D
-
-Pokemon Details Ref:
-    "types"
-    "weight"
-    "height"
-    "stats"
