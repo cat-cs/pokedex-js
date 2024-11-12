@@ -1,6 +1,9 @@
-const pokemonList = document.getElementById('pokemonList')
-const loadMoreButton = document.getElementById('loadMoreButton')
-const pokemonDetailContent = document.getElementById('pokemonDetailContent')
+const pokemonList = document.querySelector('#pokemonList')
+const loadMoreButton = document.querySelector('#loadMoreButton')
+const pokemonDetailContent = document.querySelector('#pokemonDetailContent')
+const detailCard = document.querySelector('#detailCard')
+const closebtn = document.querySelector('#close-card')
+
 
 const maxRecords = 151
 const limit = 12
@@ -43,16 +46,26 @@ function convertPokemonDetailtoLi(pokemon){
     `
 }
 
+
 function loadPokemonItens(offset, limit) {
     pokeApi.getPokemons(offset, limit).then((pokemons = []) => {
         const newHtml = pokemons.map(convertPokemonToLi).join('')
-        pokemonList.innerHTML += newHtml
-    })
-}
+        pokemonList.innerHTML += newHtml  
+        
+        const pokemonCards = document.querySelectorAll('#pokemonList .pokemon')
+        pokemonCards.forEach(pokemonCard => {
+            pokemonCard.addEventListener('click', (event) => {
+                const pokemonId = event.currentTarget.querySelector('.number').textContent.slice(1)
+                const targetPokemon = pokemons.find(pokemon => pokemon.number === parseInt(pokemonId))
+                loadPokemonDetail(targetPokemon)
+            })
+        })
+    })}
 
 function loadPokemonDetail(pokemon) {
     const pokemonDetailHtml = convertPokemonDetailtoLi(pokemon)
-    pokemonDetailContent.innerHTML += pokemonDetailHtml
+    pokemonDetailContent.innerHTML = pokemonDetailHtml
+    detailCard.style.display = 'block'
 }
 
 loadPokemonItens(offset, limit)
@@ -70,3 +83,10 @@ loadMoreButton.addEventListener('click', () => {
         loadPokemonItens(offset, limit)
     }
 })
+
+
+
+closebtn.addEventListener('click', () => {
+    detailCard.style.display = 'none'
+})
+

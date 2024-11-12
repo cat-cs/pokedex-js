@@ -147,6 +147,21 @@
     border-radius: 1rem;
 }
 
+#detailCard {
+    display: none; /* mudar para block com js */
+    position: fixed; /* Fica fixo na tela */
+    z-index: 1000; /* Fica acima de outros conteúdos */
+    left: 50%; /* Centraliza na horizontal */
+    top: 50%; /* Centraliza na vertical */
+    transform: translate(-50%, -50%); /* Ajuste de centralização */
+    width: 80%;
+    max-width: 500px;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+    border-radius: 8px;
+}
+
+
 @media screen and (min-width: 380px) {
     .pokemons {
         grid-template-columns: 1fr 1fr;
