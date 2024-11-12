@@ -84,8 +84,6 @@ loadMoreButton.addEventListener('click', () => {
     }
 })
 
-
-
 closebtn.addEventListener('click', () => {
     detailCard.style.display = 'none'
 })
