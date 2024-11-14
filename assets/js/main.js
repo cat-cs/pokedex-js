@@ -2,7 +2,7 @@ const pokemonList = document.querySelector('#pokemonList')
 const loadMoreButton = document.querySelector('#loadMoreButton')
 const pokemonDetailContent = document.querySelector('#pokemonDetailContent')
 const detailCard = document.querySelector('#detailCard')
-const closebtn = document.querySelector('#close-card')
+const closebtn = document.querySelector('#closeCard')
 
 
 const maxRecords = 151
@@ -29,20 +29,22 @@ function convertPokemonToLi(pokemon) {
 
 function convertPokemonDetailtoLi(pokemon){
     return `
-    <div id="poke-detail">
-        <span class="name">${pokemon.name} </span>
+    <div id="pokeDetail">
         <img src="${pokemon.photo}" alt="${pokemon.name}">
+        <span class="name">${pokemon.name} </span>
             <ol class="types">
                 ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
             </ol>
-        <span class="weight">${pokemon.weight}</span>
-        <span class="height">${pokemon.height}</span>
-        </div>
-        <div id="stats" class="stats-value">
-            <ul>
+    </div>
+    <div class="physic">
+        <span class="weight">weight:${pokemon.weight}</span>
+        <span class="height">height:${pokemon.height}</span>
+    </div>
+    <div id="stats" class="stats-value">
+        <ul>
             ${pokemon.stats.map((stat) => `<li id="${stat.statName}">${stat.statName}: ${stat.statValue}</li>`).join('')}
-            </ul>
-        </div>
+        </ul>
+    </div>
     `
 }
 

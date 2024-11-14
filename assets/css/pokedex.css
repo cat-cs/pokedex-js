@@ -15,7 +15,7 @@ background: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b4f112
 background-repeat: no-repeat;
 background-size: 100% 100%;
 
-section {
+.content {
 background: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5f7cd4a5-8ac9-4320-b2a8-7d111cc0dfcf/d8hedyc-f8b2b324-d7c2-4019-91cd-cc5ed6b3eb69.png/v1/fit/w_640,h_640,q_70,strp/grass_pixel_art_textures_by_txturs_d8hedyc-375w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjQwIiwicGF0aCI6IlwvZlwvNWY3Y2Q0YTUtOGFjOS00MzIwLWIyYTgtN2QxMTFjYzBkZmNmXC9kOGhlZHljLWY4YjJiMzI0LWQ3YzItNDAxOS05MWNkLWNjNWVkNmIzZWI2OS5wbmciLCJ3aWR0aCI6Ijw9NjQwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.TgZuDOAIXCWwXWwVUzPCY1ZxpUu8y8bCL9jeQuBwKGc);
 }
 
@@ -128,6 +128,7 @@ background: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5f7cd4
     margin: .5rem;
     padding: 1rem .5rem 1rem 1rem;
     border-radius: 1rem;
+    overflow: hidden;
 }
 
 /*Pokemon*/
@@ -157,7 +158,7 @@ background: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5f7cd4
     list-style: none;
 }
 
-.pokemon .detail .types .type {
+.type {
     color: #fff;
     padding: .25rem .5rem;
     margin: .25rem 0;
@@ -195,10 +196,14 @@ background: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5f7cd4
     border-radius: 1rem;
 }
 
+button, #closeCard:hover{
+    cursor: pointer;
+}
+
 /*Card Pokemon*/ 
 #detailCard {
     display: none;
-    position: absolute; /* mudar depois para "fixed"*/
+    position: fixed;
     z-index: 1000; 
     left: 50%;
     top: 50%; 
@@ -210,13 +215,50 @@ background: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5f7cd4
     border-radius: 1em;
     padding: 1.5em;
 }
-#close-card{
+#closeCard{
 display: block;
 text-align: end;
 font-size: 2em;
 
 }
-
+#pokemonDetailContent{
+    text-transform: capitalize;
+    color: #413434;
+}
+#pokeDetail{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#pokeDetail .name{
+    font-size: 2em;
+    margin-top: .5em;
+}
+#pokeDetail img{
+    width: 50%;
+    border-radius: 1em;
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrk2x-vOVg8fcFDaTXUw_QRn3wGFCfOJ7nTg&s) no-repeat;
+    background-size: cover;
+    
+}
+#pokeDetail .types{
+display: flex;
+flex-direction: row;
+list-style: none;
+padding: 0;
+}
+#pokeDetail li{
+    font-size: .650em;
+    margin-right: 1em;
+}
+.physic{
+font-size: .65em;
+text-align: center;
+}
+#stats li{
+    font-size: 1em;
+    margin: .5em;
+}
 
 @media screen and (min-width: 380px) {
     .pokemons {
