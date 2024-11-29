@@ -36,7 +36,7 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 ---
 
 ## 🛠️ Como rodar o projeto
-
+### Via GIT
 1. Clone este repositório:
     ```bash
     git clone https://github.com/cat-cs/pokedex-js.git
@@ -45,6 +45,8 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 2. Abra o arquivo `index.html` no seu navegador de preferência.
 
 3. Pronto! Agora você pode explorar a Pokedex.
+### Github.IO
+🔗 Pokedex online [aqui](https://cat-cs.github.io/pokedex-js/).
 
 ---
 
