@@ -145,10 +145,9 @@ background: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5f7cd4
 }
 
 .pokemon .detail {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    display:flex;
+    flex-wrap:wrap-reverse;
+    justify-content: center;
 }
 
 .pokemon .detail .types {
@@ -259,14 +258,11 @@ text-align: center;
     margin: .5em;
 }
 
-@media screen and (min-width: 380px) {
+@media screen and (min-width: 380px){
     .pokemons {
         grid-template-columns: 1fr 1fr;
     }
-    .pokemon .detail{
-        display: flex;
-        flex-wrap:wrap-reverse;
-    }
+    
     .pokemon ol.types{
         display: flex;
         flex-direction: row;
